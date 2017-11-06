@@ -27,28 +27,6 @@ function runTheScript() {
 
                 event.target.style.maxWidth = '800px';
                 event.target.style.margin = 'auto';
-
-                return;
-
-                var maxWidth = prompt('Max width (px)?', 800);
-
-                if (maxWidth !== null) {
-                    var prev = {
-                        maxWidth: event.target.style.maxWidth,
-                        margin: event.target.style.margin
-                    };
-                    event.target.style.maxWidth = maxWidth + 'px';
-                    event.target.style.margin = 'auto';
-
-                    setTimeout(() => {
-                        var ok = confirm('Keep adjustment?');
-
-                        if (!ok) {
-                            event.target.style.maxWidth = prev.maxWidth;
-                            event.target.style.margin = prev.margin;
-                        }
-                    }, 0);
-                }
             }
 
             addStyles();
