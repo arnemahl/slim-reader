@@ -1,6 +1,6 @@
 # <img src="icon.png" /> Slim Reader
 
-This Chrome extension makes wide pages slimmer, making lines of text shorter and easier to read.
+[This Chrome extension](https://chrome.google.com/webstore/detail/slim-reader/fdfbgiifehgeemhgndahkecfbomaelli) makes wide pages slimmer, making lines of text shorter and easier to read.
 
 ## Development
 
