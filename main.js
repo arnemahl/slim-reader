@@ -1,20 +1,59 @@
 function runTheScript() {
     var script = `
         (function() {
+            var style;
             function addStyles() {
-                var style = document.createElement('style');
+                style = document.createElement('style');
 
                 style.innerHTML = \`
-                    body {
-                        max-width: 800px;
+                    * {
+                        cursor: pointer !important;
+                    }
+                    *:hover {
+                        border: 2px dotted coral !important;
+                        background-color: peachpuff !important;
                     }
                 \`;
 
                 document.head.appendChild(style);
             }
+            function removeStyles() {
+                document.head.removeChild(style);
+            }
+
+            function onClick(event) {
+                window.removeEventListener('click', onClick);
+                removeStyles();
+
+                event.target.style.maxWidth = '800px';
+                event.target.style.margin = 'auto';
+
+                return;
+
+                var maxWidth = prompt('Max width (px)?', 800);
+
+                if (maxWidth !== null) {
+                    var prev = {
+                        maxWidth: event.target.style.maxWidth,
+                        margin: event.target.style.margin
+                    };
+                    event.target.style.maxWidth = maxWidth + 'px';
+                    event.target.style.margin = 'auto';
+
+                    setTimeout(() => {
+                        var ok = confirm('Keep adjustment?');
+
+                        if (!ok) {
+                            event.target.style.maxWidth = prev.maxWidth;
+                            event.target.style.margin = prev.margin;
+                        }
+                    }, 0);
+                }
+            }
 
             addStyles();
-        })()
+            window.addEventListener('click', onClick);
+        })();
     `;
 
     // See https://developer.chrome.com/extensions/tabs#method-executeScript.
