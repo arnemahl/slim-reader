@@ -6,9 +6,9 @@
   "version": "0.1.0",
 
   "icons": {
-    "16": "icons/icon_16.png",
-    "48": "icons/icon_48.png",
-    "128": "icons/icon_128.png"
+    "16": "icons/dev_16.png",
+    "48": "icons/dev_48.png",
+    "128": "icons/dev_128.png"
   },
 
   "background": {
@@ -17,9 +17,9 @@
   },
   "browser_action": {
     "default_icon": {
-      "16": "icons/icon_16.png",
-      "24": "icons/icon_24.png",
-      "32": "icons/icon_32.png"
+      "16": "icons/dev_16.png",
+      "24": "icons/dev_24.png",
+      "32": "icons/dev_32.png"
     },
     "default_title": "Enable Slim Reader"
   },
